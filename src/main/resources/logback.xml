@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- redirects JUL logging to logback -->
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <encoder>
+            <pattern>%date{MM/dd HH:mm:ss} %-5level[%thread] %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                   
+            <file>mservice.log</file>
+                   
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                            &lt;!&ndash; rollover daily &ndash;&gt;
+                           
+                <fileNamePattern>mservice-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+                           
+                <maxHistory>7</maxHistory>
+                       
+            </rollingPolicy>
+                 
+            <encoder>
+                           
+                <pattern>%date{MM/dd HH:mm:ss} %-5level[%thread] %logger{1} - %msg%n</pattern>
+                       
+            </encoder>
+               
+        </appender>
+    -->
+
+    <logger name="akka" level="DEBUG" />
+    <logger name="akka.io.TcpListener" level ="DEBUG"/>
+>
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
