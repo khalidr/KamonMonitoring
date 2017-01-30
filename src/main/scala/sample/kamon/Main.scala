@@ -28,7 +28,7 @@ object Main extends App {
 
   implicit val ec = system.dispatcher
 println("fooo!!!!")
-  //lazy val collectionContext = Kamon.metrics.buildDefaultCollectionContext
+  lazy val collectionContext = Kamon.metrics.buildDefaultCollectionContext
 
   val route =
     path("hello") {
